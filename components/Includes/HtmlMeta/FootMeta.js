@@ -61,11 +61,11 @@ export default function FootMeta(){
           cart","cart_url":"https:\/\/odindesignthemes.com\/vikinger-theme\/cart\/","is_cart":"","cart_redirect_after_add":"no"
           {"}"}; /* ]]&gt; */
         </Script>
-        <Script
+        {/* <Script
           src="/theme/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.minaf8e.js?ver=6.0.0"
           strategy="lazyOnload"
           id="wc-add-to-cart-js"
-        />
+        /> */}
         <Script
           src="/theme/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.mineff6.js?ver=2.1.4-wc.6.0.0"
           strategy="lazyOnload"
@@ -86,11 +86,11 @@ export default function FootMeta(){
           "ajax_url":"\/vikinger-theme\//theme/wp-admin\/admin-ajax.php","wc_ajax_url":"\/vikinger-theme\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_7c1f29329f60bf53debec3276e196883","fragment_name":"wc_fragments_7c1f29329f60bf53debec3276e196883","request_timeout":"5000"
           {"}"}; /* ]]&gt; */
         </Script>
-        <Script
+        {/* <Script
           src="/theme/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.minaf8e.js?ver=6.0.0"
           strategy="lazyOnload"
           id="wc-cart-fragments-js"
-        />
+        /> */}
         <Script
           src="/theme/wp-content/themes/vikinger/js/vendor/swiper.min8a54.js?ver=1.0.0"
           strategy="lazyOnload"

@@ -230,6 +230,13 @@ export default function LogOut(props){
             </a>
             </Link>
             {/* /BUTTON */}
+            {/* BUTTON */}
+            <Link href="/signup">
+            <a className="button danger login-button">
+            Signup
+            </a>
+            </Link>
+            {/* /BUTTON */}
         </div>
         {/* /HEADER ACTIONS */}
         </header>

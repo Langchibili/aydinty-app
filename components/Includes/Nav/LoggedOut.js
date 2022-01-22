@@ -245,6 +245,17 @@ export default function LoggedOut(props){
                         {/* /BUTTON */}
                     </div>
                     {/* /NAVIGATION WIDGET ACTIONS */}
+                    {/* NAVIGATION WIDGET ACTIONS */}
+                    <div className="navigation-widget-actions">
+                        {/* BUTTON */}
+                        <Link href="/signup"><a
+                        className="button danger login-button"
+                        >
+                        Signup
+                        </a></Link>
+                        {/* /BUTTON */}
+                    </div>
+                    {/* /NAVIGATION WIDGET ACTIONS */}
                     {/* NAVIGATION WIDGET SECTION */}
                     <div className="navigation-widget-section">
                         {/* NAVIGATION WIDGET SECTION TITLE */}

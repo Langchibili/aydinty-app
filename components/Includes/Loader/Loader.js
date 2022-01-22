@@ -16,7 +16,7 @@ export default function Loader() {
                 {/* PAGE LOADER INFO */}
                 <div className="page-loader-info">
                     {/* PAGE LOADER INFO TITLE */}
-                    <p className="page-loader-info-title">Vikinger</p>
+                    <p className="page-loader-info-title">Aydinty</p>
                     {/* /PAGE LOADER INFO TITLE */}
                     {/* PAGE LOADER INFO TEXT */}
                     <p className="page-loader-info-text">Loading...</p>
