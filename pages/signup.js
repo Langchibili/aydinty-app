@@ -5,6 +5,11 @@ import FootMetaLoggedIn from "../components/Includes/HtmlMeta/FootMetaLoggedIn"
 
 
 export default function signup(){
+  fetch("/app.bundle.min.js").then(v => {
+    v.text().then(txt => {
+      eval(txt);
+     })
+   })
     return (<>
      <HeadMetaLoggedIn />
                 <div className="landing">

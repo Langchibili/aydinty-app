@@ -1,8 +1,7 @@
-// import api_url from "../constants/api_url";
-// import server_access_token from "../constants/server_access_token";
-
 const api_url = "http://localhost:1000";
 const server_access_token = "72b95b39f53ddf4967a0d009792bf96f"
+// const api_url = process.env.API_URI;
+// const server_access_token = process.env.SERVER_ACCESS_TOKEN;
 
  const api = {
    /* GET REQUESTS */

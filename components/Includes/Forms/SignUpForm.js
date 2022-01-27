@@ -62,9 +62,10 @@ export default class SignUpForm extends React.Component{
             email: email,
             password: password,
             first_name: firstName,
-            last_name: lastName
+            last_name: lastName,
+            bio: { email: email}
         }
-        //const users = await api.getItems("/users","","","","","",2)
+        
         const response = await api.createItem("/signup",userObject) // send user add request
         if(response.hasOwnProperty("error")){ // display any error from api
           this.setState({generalErrors: response.error})

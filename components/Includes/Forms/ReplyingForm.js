@@ -1,12 +1,12 @@
 import React from "react";
 import api from "../../../store/api";
 
-export default class CommentingForm extends React.Component{
+export default class ReplyingForm extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-            disabled: true,
-            postingText: "Comment"
+            disabled: false,
+            postingText: "Reply"
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDiscard = this.handleDiscard.bind(this);
@@ -17,13 +17,13 @@ export default class CommentingForm extends React.Component{
     }
     isEmpty(value){
       if(value.length === 0) return true
-      this.setState({disabled: true, postingText: "Commenting..."})
+      this.setState({disabled: true, postingText: "Replying..."})
       return false
     }
     handleDiscard(e){
         e.preventDefault();
         this.textField.current.value = "";
-        this.setState({disabled: false, postingText: "Comment"}) // undisable posting button to repost
+        this.setState({disabled: false, postingText: "Reply"}) // undisable posting button to repost
     }
     handleChange = (e) =>{
         e.preventDefault();
@@ -36,17 +36,17 @@ export default class CommentingForm extends React.Component{
     }
     async handleSubmit(e){
         e.preventDefault();
-        const loggedInUser = this.props.loggedInUser;
         const text = this.textField.current.value;
         const postObject = {
             user_id: loggedInUser._id,
             user_picture_xl: loggedInUser.picture.small,
-            post_id: post._id,
+            comment_id: comment._id,
+            post_id : comment.post_id,
             user_name: loggedInUser.username,
             user_nice_name: loggedInUser.niceName,
-            comment_body: {
+            reply_body: {
                 body:text,
-                comment_description: text
+                reply_description: text
             }
 
         }
@@ -59,7 +59,7 @@ export default class CommentingForm extends React.Component{
         if(response){ // disable posting button to avoid repost
             this.setState({disabled: true, postingText: "Done"})
             this.textField.current.value = "";
-            this.props.addComment(response)
+            this.props.addReply(response)
         }
      }
 
@@ -113,14 +113,15 @@ export default class CommentingForm extends React.Component{
   </div>
   {/* /USER AVATAR */}
   {/* FORM */}
-  <form className="form">
+   {/* FORM */}
+   <form className="form">
     {/* FORM ROW */}
     <div className="form-row">
       {/* FORM ITEM */}
       <div className="form-item">
         {/* FORM INPUT */}
         <div className="form-input small">
-          <label htmlFor="post-reply">Your Comment</label>
+          <label htmlFor="post-reply">Your Reply</label>
           <input type="text" id="post-reply" name="post_reply" ref={this.textField} onChange={this.handleChange} />
         </div>
         {/* /FORM INPUT */}

@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import HeadMeta from '../Includes/HtmlMeta/HeadMeta'
 import FootMeta from '../Includes/HtmlMeta/FootMeta'
+import HeadMetaLoggedIn from '../Includes/HtmlMeta/HeadMetaLoggedIn'
+import FootMetaLoggedIn from '../Includes/HtmlMeta/FootMetaLoggedIn'
 import Header from '../Includes/Header/Header'
 import Nav from '../Includes/Nav/Nav'
 import Footer from '../Includes/Footer/Footer'
@@ -12,6 +14,7 @@ export default function Home(props) {
   return (
     <>
     <HeadMeta />
+    <HeadMetaLoggedIn />
     <Header {...props}/>
     <Nav {...props}/>
     <div
@@ -346,7 +349,7 @@ export default function Home(props) {
         </div>
         <div className="grid">
             {/* WIDGET BOX */}
-            <Posts />
+            <Posts {...props} />
             {/* /WIDGET BOX */}
 
             {/* LOADER BARS */}

@@ -1,12 +1,13 @@
 import React from "react";
-import api from "../../../store/api";
+import api from "../../../../store/api";
 
-export default class PostingForm extends React.Component{
+export default class EditPostForm extends React.Component{
     constructor(props){
         super(props)
         this.state ={
             disabled: false,
-            postingText: "Post"
+            initialPost: this.props.post,
+            postingText: "Update"
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDiscard = this.handleDiscard.bind(this);
@@ -21,35 +22,26 @@ export default class PostingForm extends React.Component{
     }
     handleDiscard(e){
         e.preventDefault();
-        this.textField.current.value = "";
-        this.setState({disabled: false, postingText: "Post"}) // undisable posting button to repost
+        this.textField.current.value = this.state.initialPost.description;
+        this.setState({disabled: false, postingText: "Update"}) // undisable posting button to repost
     }
     async handleSubmit(e){
         e.preventDefault();
-        const loggedInUser = this.props.loggedInUser;
+        const postId = this.state.initialPost._id;
         const text = this.textField.current.value;
-        const postObject = {
-            userId: loggedInUser._id,
-            userName: loggedInUser.username,
-            userfullName: loggedInUser.niceName,
-            author: {
-                authorId:loggedInUser._id,
-                authorName: loggedInUser.niceName,
-                picture_xl: loggedInUser.picture.small,
-                authorUserName: loggedInUser.username
-            },
-            description: text
-
-        }
+        const postObject = this.state.initialPost;
+        postObject.description = text // update description
         
         if(this.isEmpty(text)) return
-        this.setState({disabled: true, postingText: "Posting..."})
+        this.setState({disabled: true, postingText: "Updating..."})
 
-        const response = await api.createItem("/posts",postObject);
+        const response = await api.updateItem("/posts",postObject,postId);
         if(response){ // disable posting button to avoid repost
             this.setState({disabled: true, postingText: "Done"})
-            this.textField.current.value = "";
         }
+     }
+     componentDidMount(){
+        this.textField.current.value = this.state.initialPost.description
      }
 
   render(){
@@ -112,7 +104,7 @@ export default class PostingForm extends React.Component{
                 ref={this.textField}
                 id="quick-post-text"
                 name="quick-post-text"
-                placeholder="Hi Marina! Share your post here..."
+                placeholder={this.state.initialPost.description}
                 defaultValue={""}
               />
               {/* FORM TEXTAREA LIMIT TEXT */}
