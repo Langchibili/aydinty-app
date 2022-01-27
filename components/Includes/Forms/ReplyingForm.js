@@ -17,7 +17,6 @@ export default class ReplyingForm extends React.Component{
     }
     isEmpty(value){
       if(value.length === 0) return true
-      this.setState({disabled: true, postingText: "Replying..."})
       return false
     }
     handleDiscard(e){
@@ -31,7 +30,7 @@ export default class ReplyingForm extends React.Component{
             this.setState({disabled: true})
         }
         else{
-            this.setState({disabled: true})
+            this.setState({disabled: false})
         }
     }
     async handleSubmit(e){
@@ -52,6 +51,7 @@ export default class ReplyingForm extends React.Component{
         }
         
         if(this.isEmpty(text)) return
+        this.setState({disabled: true, postingText: "Replying..."})
         
         //const response = await api.createItem("/posts",postObject);
         const response = postObject

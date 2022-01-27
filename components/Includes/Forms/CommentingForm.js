@@ -17,7 +17,6 @@ export default class CommentingForm extends React.Component{
     }
     isEmpty(value){
       if(value.length === 0) return true
-      this.setState({disabled: true, postingText: "Commenting..."})
       return false
     }
     handleDiscard(e){
@@ -31,7 +30,7 @@ export default class CommentingForm extends React.Component{
             this.setState({disabled: true})
         }
         else{
-            this.setState({disabled: true})
+            this.setState({disabled: false})
         }
     }
     async handleSubmit(e){
@@ -41,7 +40,7 @@ export default class CommentingForm extends React.Component{
         const postObject = {
             user_id: loggedInUser._id,
             user_picture_xl: loggedInUser.picture.small,
-            post_id: post._id,
+            post_id: this.props.postId,
             user_name: loggedInUser.username,
             user_nice_name: loggedInUser.niceName,
             comment_body: {
@@ -52,7 +51,8 @@ export default class CommentingForm extends React.Component{
         }
         
         if(this.isEmpty(text)) return
-        
+        this.setState({disabled: true, postingText: "Comment"})
+
         //const response = await api.createItem("/posts",postObject);
         const response = postObject
         console.log(response)
@@ -60,6 +60,7 @@ export default class CommentingForm extends React.Component{
             this.setState({disabled: true, postingText: "Done"})
             this.textField.current.value = "";
             this.props.addComment(response)
+            this.props.updateCommentCount()
         }
      }
 

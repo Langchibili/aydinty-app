@@ -7,7 +7,8 @@ export default class Comment extends React.Component{
      constructor(props){
        super(props)
        this.state = {
-         replies: <></>
+         replies: <></>,
+         showReplies: false
        }
      }
 
@@ -42,19 +43,24 @@ export default class Comment extends React.Component{
       }
       const response = await api.createItem("/replies/get", getReplyBody)
       if(response){
-          if(response.length > 0){
-            if(!loggedInUser){
-              this.setState({
-                replies : <Replies replies={response}/>
-              })
-              return
-            }
+          if(!loggedInUser){
             this.setState({
-              replies: <Replies replies={response} loggedInUser={loggedInUser}/>
+              replies : <Replies replies={response} comment={comment}/>
             })
+            return
           }
+          this.setState({
+            replies: <Replies replies={response} loggedInUser={loggedInUser} comment={comment}/>
+          })
       }
     }
+    toggleReplies = () =>{
+      const showReplies = this.state.showReplies
+      this.setState({
+        showReplies: !showReplies
+      })
+}
+
     componentDidMount(){
       this.displayReplies()
     }
@@ -67,7 +73,7 @@ export default class Comment extends React.Component{
           {/* USER AVATAR CONTENT */}
           <div className="user-avatar-content">
             {/* HEXAGON */}
-            <div className="hexagon-image-30-32" data-src="img/avatar/05.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+            <div className="hexagon-image-30-32" data-src="https://odindesignthemes.com/vikinger/img/avatar/05.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
             {/* /HEXAGON */}
           </div>
           {/* /USER AVATAR CONTENT */}
@@ -122,12 +128,12 @@ export default class Comment extends React.Component{
                 {/* REACTION ITEM */}
                 <div className="reaction-item" style={{"position":"relative"}}>
                   {/* REACTION IMAGE */}
-                  <img className="reaction-image reaction-item-dropdown-trigger" src="img/reaction/happy.png" alt="reaction-happy" />
+                  <img className="reaction-image reaction-item-dropdown-trigger" src="https://odindesignthemes.com/vikinger/img/reaction/happy.png" alt="reaction-happy" />
                   {/* /REACTION IMAGE */}
                   {/* SIMPLE DROPDOWN */}
                   <div className="simple-dropdown padded reaction-item-dropdown" style={{"position":"absolute","z-index":"9999","bottom":"38px","left":"-16px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 20px)","-ms-transform":"translate(0px, 20px)","transform":"translate(0px, 20px)","-webkit-transition":"transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s","transition":"transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s"}}>
                     {/* SIMPLE DROPDOWN TEXT */}
-                    <p className="simple-dropdown-text"><img className="reaction" src="img/reaction/happy.png" alt="reaction-happy" /> <span className="bold">Happy</span></p>
+                    <p className="simple-dropdown-text"><img className="reaction" src="https://odindesignthemes.com/vikinger/img/reaction/happy.png" alt="reaction-happy" /> <span className="bold">Happy</span></p>
                     {/* /SIMPLE DROPDOWN TEXT */}
                     {/* SIMPLE DROPDOWN TEXT */}
                     <p className="simple-dropdown-text">Marcus Jhonson</p>
@@ -139,12 +145,12 @@ export default class Comment extends React.Component{
                 {/* REACTION ITEM */}
                 <div className="reaction-item" style={{"position":"relative"}}>
                   {/* REACTION IMAGE */}
-                  <img className="reaction-image reaction-item-dropdown-trigger" src="img/reaction/like.png" alt="reaction-like" />
+                  <img className="reaction-image reaction-item-dropdown-trigger" src="https://odindesignthemes.com/vikinger/img/reaction/like.png" alt="reaction-like" />
                   {/* /REACTION IMAGE */}
                   {/* SIMPLE DROPDOWN */}
                   <div className="simple-dropdown padded reaction-item-dropdown" style={{"position":"absolute","z-index":"9999","bottom":"38px","left":"-16px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 20px)","-ms-transform":"translate(0px, 20px)","transform":"translate(0px, 20px)","-webkit-transition":"transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s","transition":"transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s"}}>
                     {/* SIMPLE DROPDOWN TEXT */}
-                    <p className="simple-dropdown-text"><img className="reaction" src="img/reaction/like.png" alt="reaction-like" /> <span className="bold">Like</span></p>
+                    <p className="simple-dropdown-text"><img className="reaction" src="https://odindesignthemes.com/vikinger/img/reaction/like.png" alt="reaction-like" /> <span className="bold">Like</span></p>
                     {/* /SIMPLE DROPDOWN TEXT */}
                     {/* SIMPLE DROPDOWN TEXT */}
                     <p className="simple-dropdown-text">Neko Bebop</p>
@@ -176,56 +182,56 @@ export default class Comment extends React.Component{
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Like" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/like.png" alt="reaction-like" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/like.png" alt="reaction-like" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-24px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Like</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Love" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/love.png" alt="reaction-love" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/love.png" alt="reaction-love" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-26px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Love</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Dislike" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/dislike.png" alt="reaction-dislike" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-31.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Dislike</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Happy" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/happy.png" alt="reaction-happy" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-30.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Happy</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Funny" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/funny.png" alt="reaction-funny" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-30px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Funny</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Wow" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/wow.png" alt="reaction-wow" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-26px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Wow</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Angry" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/angry.png" alt="reaction-angry" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-29.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Angry</p></div></div>
                 {/* /REACTION OPTION */}
                 {/* REACTION OPTION */}
                 <div className="reaction-option text-tooltip-tft" data-title="Sad" style={{"position":"relative"}}>
                   {/* REACTION OPTION IMAGE */}
-                  <img className="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad" />
+                  <img className="reaction-option-image" src="https://odindesignthemes.com/vikinger/img/reaction/sad.png" alt="reaction-sad" />
                   {/* /REACTION OPTION IMAGE */}
                   <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-23px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Sad</p></div></div>
                 {/* /REACTION OPTION */}
@@ -236,7 +242,7 @@ export default class Comment extends React.Component{
             {/* META LINE */}
             <div className="meta-line">
               {/* META LINE LINK */}
-              <p className="meta-line-link light">Reply</p>
+              <p className="meta-line-link light" onClick={this.toggleReplies}>Reply</p>
               {/* /META LINE LINK */}
             </div>
             {/* /META LINE */}

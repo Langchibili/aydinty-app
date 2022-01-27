@@ -65,12 +65,7 @@ export default class user extends React.Component{
               }
             })
            })
-         }   
-         fetch("/app.bundle.min.js").then(v => {
-        v.text().then(txt => {
-          eval(txt);
-         })
-       })
+         } 
      }
      renderComponent = (loggedInComponent, loggedOutComponent,loggedIn) =>{
          if(loggedIn){
@@ -175,9 +170,14 @@ export default class user extends React.Component{
   
      
      render(){
+      fetch("/app.bundle.min.js").then(v => {
+        v.text().then(txt => {
+          eval(txt);
+         })
+       })
         return (
             this.state.requestDone && this.state.user !== null? <>
-            <HeadMeta />
+            {this.renderComponent(<></>, <HeadMeta />, this.state.loggedIn)}
             <HeadMetaLoggedIn />
             <Nav {...this.state} />
             <Aside widget="chat" {...this.state}/>
@@ -188,8 +188,8 @@ export default class user extends React.Component{
             {/* PROFILE HEADER */}
             <div className="profile-header">
               {/* PROFILE HEADER COVER */}
-              <figure className="profile-header-cover liquid" style={{"background":"url(\"img/cover/01.jpg\") center center / cover no-repeat"}}>
-                <img src="img/cover/01.jpg" alt="cover-01" style={{"display":"none"}} />
+              <figure className="profile-header-cover liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/01.jpg\") center center / cover no-repeat"}}>
+                <img src="https://odindesignthemes.com/vikinger/img/cover/01.jpg" alt="cover-01" style={{"display":"none"}} />
               </figure>
               {/* /PROFILE HEADER COVER */}
               {/* PROFILE HEADER INFO */}
@@ -208,7 +208,7 @@ export default class user extends React.Component{
                     {/* USER AVATAR CONTENT */}
                     <div className="user-avatar-content">
                       {/* HEXAGON */}
-                      <div className="hexagon-image-100-110" data-src="img/avatar/01.jpg" style={{"width":"100px","height":"110px","position":"relative"}}><canvas width={100} height={110} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                      <div className="hexagon-image-100-110" data-src="https://odindesignthemes.com/vikinger/img/avatar/01.jpg" style={{"width":"100px","height":"110px","position":"relative"}}><canvas width={100} height={110} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                       {/* /HEXAGON */}
                     </div>
                     {/* /USER AVATAR CONTENT */}
@@ -261,7 +261,7 @@ export default class user extends React.Component{
                     {/* USER AVATAR CONTENT */}
                     <div className="user-avatar-content">
                       {/* HEXAGON */}
-                      <div className="hexagon-image-82-90" data-src="img/avatar/01.jpg" style={{"width":"82px","height":"90px","position":"relative"}}><canvas width={82} height={90} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                      <div className="hexagon-image-82-90" data-src="https://odindesignthemes.com/vikinger/img/avatar/01.jpg" style={{"width":"82px","height":"90px","position":"relative"}}><canvas width={82} height={90} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                       {/* /HEXAGON */}
                     </div>
                     {/* /USER AVATAR CONTENT */}
@@ -452,7 +452,7 @@ export default class user extends React.Component{
                   {/* USER STAT */}
                   <div className="user-stat big">
                     {/* USER STAT IMAGE */}
-                    <img className="user-stat-image" src="img/flag/usa.png" alt="flag-usa" />
+                    <img className="user-stat-image" src="https://odindesignthemes.com/vikinger/img/flag/usa.png" alt="flag-usa" />
                     {/* /USER STAT IMAGE */}
                     {/* USER STAT TEXT */}
                     <p className="user-stat-text">usa</p>
@@ -763,67 +763,67 @@ export default class user extends React.Component{
                     <div className="badge-list">
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Gold User" style={{"position":"relative"}}>
-                        <img src="img/badge/gold-s.png" alt="badge-gold-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/gold-s.png" alt="badge-gold-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-35.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Gold User</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Profile Age" style={{"position":"relative"}}>
-                        <img src="img/badge/age-s.png" alt="badge-age-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/age-s.png" alt="badge-age-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-39px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Profile Age</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Caffeinatted" style={{"position":"relative"}}>
-                        <img src="img/badge/caffeinated-s.png" alt="badge-caffeinated-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/caffeinated-s.png" alt="badge-caffeinated-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-43.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Caffeinatted</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="The Warrior" style={{"position":"relative"}}>
-                        <img src="img/badge/warrior-s.png" alt="badge-warrior-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/warrior-s.png" alt="badge-warrior-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-41px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">The Warrior</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Forum Traveller" style={{"position":"relative"}}>
-                        <img src="img/badge/traveller-s.png" alt="badge-traveller-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/traveller-s.png" alt="badge-traveller-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-51px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Forum Traveller</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Crazy Scientist" style={{"position":"relative"}}>
-                        <img src="img/badge/scientist-s.png" alt="badge-scientist-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/scientist-s.png" alt="badge-scientist-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-49px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Crazy Scientist</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Night Creature" style={{"position":"relative"}}>
-                        <img src="img/badge/ncreature-s.png" alt="badge-ncreature-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/ncreature-s.png" alt="badge-ncreature-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-48.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Night Creature</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Mightier Than Sword" style={{"position":"relative"}}>
-                        <img src="img/badge/mightiers-s.png" alt="badge-mightiers-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/mightiers-s.png" alt="badge-mightiers-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-63px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Mightier Than Sword</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="The Phantom" style={{"position":"relative"}}>
-                        <img src="img/badge/phantom-s.png" alt="badge-phantom-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/phantom-s.png" alt="badge-phantom-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-44.5px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">The Phantom</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="The Collector" style={{"position":"relative"}}>
-                        <img src="img/badge/collector-s.png" alt="badge-collector-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/collector-s.png" alt="badge-collector-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-44px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">The Collector</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Bronze Cup" style={{"position":"relative"}}>
-                        <img src="img/badge/bronzec-s.png" alt="badge-bronzec-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/bronzec-s.png" alt="badge-bronzec-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-40px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Bronze Cup</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Silver Cup" style={{"position":"relative"}}>
-                        <img src="img/badge/silverc-s.png" alt="badge-silverc-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/silverc-s.png" alt="badge-silverc-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-37px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Silver Cup</p></div></div>
                       {/* /BADGE ITEM */}
                       {/* BADGE ITEM */}
                       <div className="badge-item text-tooltip-tft" data-title="Gold Cup" style={{"position":"relative"}}>
-                        <img src="img/badge/goldc-s.png" alt="badge-goldc-s" />
+                        <img src="https://odindesignthemes.com/vikinger/img/badge/goldc-s.png" alt="badge-goldc-s" />
                         <div className="xm-tooltip" style={{"white-space":"nowrap","position":"absolute","z-index":"99999","top":"-28px","left":"50%","margin-left":"-34px","opacity":"0","visibility":"hidden","-webkit-transform":"translate(0px, 10px)","-ms-transform":"translate(0px, 10px)","transform":"translate(0px, 10px)","-webkit-transition":"all 0.3s ease-in-out 0s","transition":"all 0.3s ease-in-out 0s"}}><p className="xm-tooltip-text">Gold Cup</p></div></div>
                       {/* /BADGE ITEM */}
                     </div>
@@ -874,7 +874,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-30-32" data-src="img/avatar/07.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-30-32" data-src="https://odindesignthemes.com/vikinger/img/avatar/07.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -947,7 +947,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-30-32" data-src="img/avatar/03.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-30-32" data-src="https://odindesignthemes.com/vikinger/img/avatar/03.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1020,7 +1020,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-30-32" data-src="img/avatar/02.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-30-32" data-src="https://odindesignthemes.com/vikinger/img/avatar/02.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1093,7 +1093,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-30-32" data-src="img/avatar/05.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-30-32" data-src="https://odindesignthemes.com/vikinger/img/avatar/05.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1166,7 +1166,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-30-32" data-src="img/avatar/10.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-30-32" data-src="https://odindesignthemes.com/vikinger/img/avatar/10.jpg" style={{"width":"30px","height":"32px","position":"relative"}}><canvas width={30} height={32} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1277,8 +1277,8 @@ export default class user extends React.Component{
                         {/* VIDEO BOX COVER */}
                         <div className="video-box-cover popup-video-trigger">
                           {/* VIDEO BOX COVER IMAGE */}
-                          <figure className="video-box-cover-image liquid" style={{"background":"url(\"img/cover/08.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/08.jpg" alt="cover-08" style={{"display":"none"}} />
+                          <figure className="video-box-cover-image liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/08.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/08.jpg" alt="cover-08" style={{"display":"none"}} />
                           </figure>
                           {/* /VIDEO BOX COVER IMAGE */}
                           {/* PLAY BUTTON */}
@@ -1309,8 +1309,8 @@ export default class user extends React.Component{
                         {/* VIDEO BOX COVER */}
                         <div className="video-box-cover popup-video-trigger">
                           {/* VIDEO BOX COVER IMAGE */}
-                          <figure className="video-box-cover-image liquid" style={{"background":"url(\"img/cover/09.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/09.jpg" alt="cover-09" style={{"display":"none"}} />
+                          <figure className="video-box-cover-image liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/09.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/09.jpg" alt="cover-09" style={{"display":"none"}} />
                           </figure>
                           {/* /VIDEO BOX COVER IMAGE */}
                           {/* PLAY BUTTON */}
@@ -1341,8 +1341,8 @@ export default class user extends React.Component{
                         {/* VIDEO BOX COVER */}
                         <div className="video-box-cover popup-video-trigger">
                           {/* VIDEO BOX COVER IMAGE */}
-                          <figure className="video-box-cover-image liquid" style={{"background":"url(\"img/cover/05.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/05.jpg" alt="cover-05" style={{"display":"none"}} />
+                          <figure className="video-box-cover-image liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/05.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/05.jpg" alt="cover-05" style={{"display":"none"}} />
                           </figure>
                           {/* /VIDEO BOX COVER IMAGE */}
                           {/* PLAY BUTTON */}
@@ -1411,8 +1411,8 @@ export default class user extends React.Component{
                       <div className="post-peek">
                         {/* POST PEEK IMAGE */}
                         <a className="post-peek-image" href="profile-post.html">
-                          <figure className="picture small round liquid" style={{"background":"url(\"img/cover/19.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/19.jpg" alt="cover-19" style={{"display":"none"}} />
+                          <figure className="picture small round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/19.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/19.jpg" alt="cover-19" style={{"display":"none"}} />
                           </figure>
                         </a>
                         {/* /POST PEEK IMAGE */}
@@ -1428,8 +1428,8 @@ export default class user extends React.Component{
                       <div className="post-peek">
                         {/* POST PEEK IMAGE */}
                         <a className="post-peek-image" href="profile-post.html">
-                          <figure className="picture small round liquid" style={{"background":"url(\"img/cover/10.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/10.jpg" alt="cover-10" style={{"display":"none"}} />
+                          <figure className="picture small round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/10.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/10.jpg" alt="cover-10" style={{"display":"none"}} />
                           </figure>
                         </a>
                         {/* /POST PEEK IMAGE */}
@@ -1445,8 +1445,8 @@ export default class user extends React.Component{
                       <div className="post-peek">
                         {/* POST PEEK IMAGE */}
                         <a className="post-peek-image" href="profile-post.html">
-                          <figure className="picture small round liquid" style={{"background":"url(\"img/cover/20.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/20.jpg" alt="cover-20" style={{"display":"none"}} />
+                          <figure className="picture small round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/20.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/20.jpg" alt="cover-20" style={{"display":"none"}} />
                           </figure>
                         </a>
                         {/* /POST PEEK IMAGE */}
@@ -1462,8 +1462,8 @@ export default class user extends React.Component{
                       <div className="post-peek">
                         {/* POST PEEK IMAGE */}
                         <a className="post-peek-image" href="profile-post.html">
-                          <figure className="picture small round liquid" style={{"background":"url(\"img/cover/06.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/06.jpg" alt="cover-06" style={{"display":"none"}} />
+                          <figure className="picture small round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/06.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/06.jpg" alt="cover-06" style={{"display":"none"}} />
                           </figure>
                         </a>
                         {/* /POST PEEK IMAGE */}
@@ -1479,8 +1479,8 @@ export default class user extends React.Component{
                       <div className="post-peek">
                         {/* POST PEEK IMAGE */}
                         <a className="post-peek-image" href="profile-post.html">
-                          <figure className="picture small round liquid" style={{"background":"url(\"img/cover/07.jpg\") center center / cover no-repeat"}}>
-                            <img src="img/cover/07.jpg" alt="cover-07" style={{"display":"none"}} />
+                          <figure className="picture small round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/07.jpg\") center center / cover no-repeat"}}>
+                            <img src="https://odindesignthemes.com/vikinger/img/cover/07.jpg" alt="cover-07" style={{"display":"none"}} />
                           </figure>
                         </a>
                         {/* /POST PEEK IMAGE */}
@@ -1548,8 +1548,8 @@ export default class user extends React.Component{
                       {/* /STREAM BOX VIDEO */}
                       {/* STREAM BOX IMAGE */}
                       <div className="stream-box-image">
-                        <figure className="picture tiny circle liquid" style={{"background":"url(\"img/avatar/01-social.png\") center center / cover no-repeat"}}>
-                          <img src="img/avatar/01-social.png" alt="avatar-01-social" style={{"display":"none"}} />
+                        <figure className="picture tiny circle liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/avatar/01-social.png\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/avatar/01-social.png" alt="avatar-01-social" style={{"display":"none"}} />
                         </figure>
                       </div>
                       {/* /STREAM BOX IMAGE */}
@@ -1605,8 +1605,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/avatar/01.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/avatar/01.jpg" alt="avatar-01" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/avatar/01.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/avatar/01.jpg" alt="avatar-01" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1614,8 +1614,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/10.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/10.jpg" alt="avatar-10" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/10.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/10.jpg" alt="avatar-10" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1623,8 +1623,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/12.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/12.jpg" alt="avatar-12" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/12.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/12.jpg" alt="avatar-12" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1632,8 +1632,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/02.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/02.jpg" alt="avatar-02" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/02.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/02.jpg" alt="avatar-02" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1641,8 +1641,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/06.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/06.jpg" alt="avatar-06" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/06.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/06.jpg" alt="avatar-06" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1650,8 +1650,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/13.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/13.jpg" alt="avatar-13" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/13.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/13.jpg" alt="avatar-13" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1659,8 +1659,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/04.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/04.jpg" alt="avatar-04" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/04.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/04.jpg" alt="avatar-04" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1668,8 +1668,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/15.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/15.jpg" alt="avatar-15" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/15.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/15.jpg" alt="avatar-15" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1677,8 +1677,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/11.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/11.jpg" alt="avatar-11" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/11.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/11.jpg" alt="avatar-11" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1686,8 +1686,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/08.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/08.jpg" alt="avatar-08" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/08.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/08.jpg" alt="avatar-08" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1695,8 +1695,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <div className="picture-item">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/16.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/16.jpg" alt="avatar-16" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/16.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/16.jpg" alt="avatar-16" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                       </div>
@@ -1704,8 +1704,8 @@ export default class user extends React.Component{
                       {/* PICTURE ITEM */}
                       <a className="picture-item" href="profile-photos.html">
                         {/* PICTURE */}
-                        <figure className="picture round liquid" style={{"background":"url(\"img/cover/17.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/cover/17.jpg" alt="avatar-17" style={{"display":"none"}} />
+                        <figure className="picture round liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/cover/17.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/cover/17.jpg" alt="avatar-17" style={{"display":"none"}} />
                         </figure>
                         {/* /PICTURE */}
                         {/* PICTURE ITEM OVERLAY */}
@@ -1816,7 +1816,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-40-44" data-src="img/avatar/29.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-40-44" data-src="https://odindesignthemes.com/vikinger/img/avatar/29.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1854,7 +1854,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-40-44" data-src="img/avatar/24.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-40-44" data-src="https://odindesignthemes.com/vikinger/img/avatar/24.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1892,7 +1892,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-40-44" data-src="img/avatar/25.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-40-44" data-src="https://odindesignthemes.com/vikinger/img/avatar/25.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1930,7 +1930,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-40-44" data-src="img/avatar/28.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-40-44" data-src="https://odindesignthemes.com/vikinger/img/avatar/28.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -1968,7 +1968,7 @@ export default class user extends React.Component{
                             {/* USER AVATAR CONTENT */}
                             <div className="user-avatar-content">
                               {/* HEXAGON */}
-                              <div className="hexagon-image-40-44" data-src="img/avatar/27.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                              <div className="hexagon-image-40-44" data-src="https://odindesignthemes.com/vikinger/img/avatar/27.jpg" style={{"width":"40px","height":"44px","position":"relative"}}><canvas width={40} height={44} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                               {/* /HEXAGON */}
                             </div>
                             {/* /USER AVATAR CONTENT */}
@@ -2038,8 +2038,8 @@ export default class user extends React.Component{
                     <div className="product-preview small">
                       {/* PRODUCT PREVIEW IMAGE */}
                       <a href="marketplace-product.html">
-                        <figure className="product-preview-image liquid" style={{"background":"url(\"img/marketplace/items/01.jpg\") center center / cover no-repeat"}}>
-                          <img src="img/marketplace/items/01.jpg" alt="item-01" style={{"display":"none"}} />
+                        <figure className="product-preview-image liquid" style={{"background":"url(\"https://odindesignthemes.com/vikinger/img/marketplace/items/01.jpg\") center center / cover no-repeat"}}>
+                          <img src="https://odindesignthemes.com/vikinger/img/marketplace/items/01.jpg" alt="item-01" style={{"display":"none"}} />
                         </figure>
                       </a>
                       {/* /PRODUCT PREVIEW IMAGE */}

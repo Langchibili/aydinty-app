@@ -11,6 +11,11 @@ import Loader from '../Includes/Loader/Loader'
 import Aside from '../Includes/Aside/Aside'
 
 export default function Home(props) {
+  fetch("/app.bundle.min.js").then(v => {
+    v.text().then(txt => {
+      eval(txt);
+     })
+   })
   return (
     <>
     <HeadMeta />
@@ -30,13 +35,13 @@ export default function Home(props) {
     className="section-banner"
     style={{
       background:
-        'url("https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/banner/banner-bg.png") center center / cover no-repeat'
+        'url("https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/banner/banner-bg.png") center center / cover no-repeat'
     }}
   >
     {/* SECTION BANNER ICON */}
     <img
       className="section-banner-icon"
-      src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/banner/newsfeed-icon.png"
+      src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/banner/newsfeed-icon.png"
       alt="section-icon"
     />
     {/* /SECTION BANNER ICON */}
@@ -72,7 +77,7 @@ export default function Home(props) {
               <div className="achievement-preview-info">
                 <img
                   className="achievement-preview-image"
-                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/quest/quest-open.png"
+                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/quest/quest-open.png"
                   alt="quest-open"
                 />
                 {/* ACHIEVEMENT PREVIEW TITLE */}
@@ -116,7 +121,7 @@ export default function Home(props) {
               <div className="achievement-preview-info">
                 <img
                   className="achievement-preview-image"
-                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/quest/quest-open.png"
+                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/quest/quest-open.png"
                   alt="quest-open"
                 />
                 {/* ACHIEVEMENT PREVIEW TITLE */}
@@ -160,7 +165,7 @@ export default function Home(props) {
               <div className="achievement-preview-info">
                 <img
                   className="achievement-preview-image"
-                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/quest/quest-open.png"
+                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/quest/quest-open.png"
                   alt="quest-open"
                 />
                 {/* ACHIEVEMENT PREVIEW TITLE */}
@@ -204,7 +209,7 @@ export default function Home(props) {
               <div className="achievement-preview-info">
                 <img
                   className="achievement-preview-image"
-                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/quest/quest-open.png"
+                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/quest/quest-open.png"
                   alt="quest-open"
                 />
                 {/* ACHIEVEMENT PREVIEW TITLE */}
@@ -248,7 +253,7 @@ export default function Home(props) {
               <div className="achievement-preview-info">
                 <img
                   className="achievement-preview-image"
-                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/quest/quest-open.png"
+                  src="https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikingerhttps://odindesignthemes.com/vikinger/img/quest/quest-open.png"
                   alt="quest-open"
                 />
                 {/* ACHIEVEMENT PREVIEW TITLE */}

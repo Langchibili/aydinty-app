@@ -56,7 +56,7 @@ export default class User extends React.Component{
            const user = this.props.user;
            const loggedInUser = this.props.loggedInUser;
 
-           if(loggedInUser === null) {
+           if(!loggedInUser) {
               return  <Link href="/signup"><a className="button secondary">Follow</a></Link>
            }
            if(user._id !== loggedInUser._id) {
@@ -76,7 +76,7 @@ export default class User extends React.Component{
         const user = this.props.user;
         const loggedInUser = this.props.loggedInUser;
 
-        if(loggedInUser === null) {
+        if(!loggedInUser) {
           return user.followers.length;
         }
         if(user._id !== loggedInUser._id) {
@@ -88,7 +88,7 @@ export default class User extends React.Component{
       const user = this.props.user;
       const loggedInUser = this.props.loggedInUser;
 
-      if(loggedInUser === null) {
+      if(!loggedInUser) {
         return user.following.length;
       }
       if(user._id !== loggedInUser._id) {
@@ -100,7 +100,7 @@ export default class User extends React.Component{
        const user = this.props.user;
        const loggedInUser = this.props.loggedInUser;
 
-       if(loggedInUser === null) {
+       if(!loggedInUser) {
           return "/member/"+user._id
         }
        if(user._id !== loggedInUser._id) {
@@ -109,13 +109,12 @@ export default class User extends React.Component{
        return "/profile"
     }
     componentDidMount(){
-      if(loggedInUser === null) return
+      if(!loggedInUser) return
 
       const user = this.props.user;
       const loggedInUser = this.props.loggedInUser;
 
       const following = loggedInUser.following
-console.log(loggedInUser)
       if(!following.includes(user._id)){
         this.setState({
           followState:"follow"
@@ -132,7 +131,7 @@ console.log(loggedInUser)
         <div className="user-preview">
         {/* USER PREVIEW COVER */}
         <figure className="user-preview-cover liquid" style={{"background":"url(\"img/cover/04.jpg\") center center / cover no-repeat"}}>
-          <img src="/img/cover/04.jpg" alt="cover-04" style={{"display":"none"}} />
+          <img src="https://odindesignthemes.com/vikinger/img/cover/04.jpg" alt="cover-04" style={{"display":"none"}} />
         </figure>
         {/* /USER PREVIEW COVER */}
         {/* USER PREVIEW INFO */}
@@ -151,7 +150,7 @@ console.log(loggedInUser)
               {/* USER AVATAR CONTENT */}
               <div className="user-avatar-content">
                 {/* HEXAGON */}
-                <div className="hexagon-image-82-90" data-src="/img/avatar/05.jpg" style={{"width":"82px","height":"90px","position":"relative"}}><canvas width={82} height={90} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
+                <div className="hexagon-image-82-90" data-src="https://odindesignthemes.com/vikinger/img/avatar/05.jpg" style={{"width":"82px","height":"90px","position":"relative"}}><canvas width={82} height={90} style={{"position":"absolute","top":"0px","left":"0px"}} /></div>
                 {/* /HEXAGON */}
               </div>
               {/* /USER AVATAR CONTENT */}
@@ -204,27 +203,27 @@ console.log(loggedInUser)
           <div className="badge-list small">
             {/* BADGE ITEM */}
             <div className="badge-item">
-              <img src="/img/badge/silver-s.png" alt="badge-silver-s" />
+              <img src="https://odindesignthemes.com/vikinger/img/badge/silver-s.png" alt="badge-silver-s" />
             </div>
             {/* /BADGE ITEM */}
             {/* BADGE ITEM */}
             <div className="badge-item">
-              <img src="/img/badge/fcultivator-s.png" alt="badge-fcultivator-s" />
+              <img src="https://odindesignthemes.com/vikinger/img/badge/fcultivator-s.png" alt="badge-fcultivator-s" />
             </div>
             {/* /BADGE ITEM */}
             {/* BADGE ITEM */}
             <div className="badge-item">
-              <img src="/img/badge/scientist-s.png" alt="badge-scientist-s" />
+              <img src="https://odindesignthemes.com/vikinger/img/badge/scientist-s.png" alt="badge-scientist-s" />
             </div>
             {/* /BADGE ITEM */}
             {/* BADGE ITEM */}
             <div className="badge-item">
-              <img src="/img/badge/rmachine-s.png" alt="badge-rmachine-s" />
+              <img src="https://odindesignthemes.com/vikinger/img/badge/rmachine-s.png" alt="badge-rmachine-s" />
             </div>
             {/* /BADGE ITEM */}
             {/* BADGE ITEM */}
             <a className="badge-item" href="profile-badges.html">
-              <img src="/img/badge/blank-s.png" alt="badge-blank-s" />
+              <img src="https://odindesignthemes.com/vikinger/img/badge/blank-s.png" alt="badge-blank-s" />
               {/* BADGE ITEM TEXT */}
               <p className="badge-item-text">+29</p>
               {/* /BADGE ITEM TEXT */}

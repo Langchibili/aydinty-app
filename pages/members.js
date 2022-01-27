@@ -24,11 +24,6 @@ export default class members extends React.Component{
      }
  
      async componentDidMount(){
-        fetch("/app.bundle.min.js").then(v => {
-            v.text().then(txt => {
-              eval(txt);
-             })
-           })
          const response = await api.getItems("/user_status") // get loggedInUser
          if(response.hasOwnProperty("isLoggedIn")){
            this.setState({
@@ -51,6 +46,11 @@ export default class members extends React.Component{
      }
 
      render(){
+        fetch("/app.bundle.min.js").then(v => {
+            v.text().then(txt => {
+              eval(txt);
+             })
+           })
         return (
            this.state.requestDone?<>
             {this.renderComponent(<></>, <HeadMeta />, this.state.loggedIn)}

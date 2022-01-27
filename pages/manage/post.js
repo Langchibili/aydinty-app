@@ -54,11 +54,6 @@ export default class profile extends React.Component{
         }
      }
      async componentDidMount(){
-        fetch("/app.bundle.min.js").then(v => {
-            v.text().then(txt => {
-              eval(txt);
-             })
-           })
          const action = this.props.query.action;
          const id = this.props.query.id;
          const response = await api.getItems("/user_status") // get user                 
@@ -80,6 +75,11 @@ export default class profile extends React.Component{
          }   
      }
      render(){
+        fetch("/app.bundle.min.js").then(v => {
+            v.text().then(txt => {
+              eval(txt);
+             })
+           })
         return (
             <>
             <HeadMetaLoggedIn />
@@ -166,7 +166,7 @@ export default class profile extends React.Component{
                     {/* ACHIEVEMENT STATUS IMAGE */}
                     <img
                     className="achievement-status-image"
-                    src="/img/badge/completedq-s.png"
+                    src="https://odindesignthemes.com/vikinger/img/badge/completedq-s.png"
                     alt="bdage-completedq-s"
                     />
                     {/* /ACHIEVEMENT STATUS IMAGE */}
@@ -190,7 +190,7 @@ export default class profile extends React.Component{
                     {/* ACHIEVEMENT STATUS IMAGE */}
                     <img
                     className="achievement-status-image"
-                    src="/img/badge/unlocked-badge.png"
+                    src="https://odindesignthemes.com/vikinger/img/badge/unlocked-badge.png"
                     alt="bdage-unlocked-badge"
                     />
                     {/* /ACHIEVEMENT STATUS IMAGE */}
@@ -288,7 +288,7 @@ export default class profile extends React.Component{
                             {/* BADGE ITEM STAT IMAGE */}
                             <img
                                 className="badge-item-stat-image"
-                                src="/img/badge/uexp-b.png"
+                                src="https://odindesignthemes.com/vikinger/img/badge/uexp-b.png"
                                 alt="badge-uexp-b"
                             />
                             {/* /BADGE ITEM STAT IMAGE */}
@@ -363,7 +363,7 @@ export default class profile extends React.Component{
                             {/* BADGE ITEM STAT IMAGE */}
                             <img
                                 className="badge-item-stat-image"
-                                src="/img/badge/verifieds-b.png"
+                                src="https://odindesignthemes.com/vikinger/img/badge/verifieds-b.png"
                                 alt="badge-verifieds-b"
                             />
                             {/* /BADGE ITEM STAT IMAGE */}
@@ -436,7 +436,7 @@ export default class profile extends React.Component{
                             {/* BADGE ITEM STAT IMAGE */}
                             <img
                                 className="badge-item-stat-image"
-                                src="/img/badge/qconq-b.png"
+                                src="https://odindesignthemes.com/vikinger/img/badge/qconq-b.png"
                                 alt="badge-qconq-b"
                             />
                             {/* /BADGE ITEM STAT IMAGE */}
@@ -568,7 +568,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/07.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/07.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -691,7 +691,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/03.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/03.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -814,7 +814,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/23.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/23.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -937,7 +937,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/15.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/15.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -1060,7 +1060,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/04.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/04.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -1184,7 +1184,7 @@ export default class profile extends React.Component{
                 href="https://themeforest.net/user/odin_design"
                 target="_blank"
             >
-                <img src="/img/banner/banner-promo.jpg" alt="banner-promo" />
+                <img src="https://odindesignthemes.com/vikinger/img/banner/banner-promo.jpg" alt="banner-promo" />
             </a>
             {/* /BANNER PROMO */}
             {/* WIDGET BOX */}
@@ -1240,7 +1240,7 @@ export default class profile extends React.Component{
                         {/* QUEST PREVIEW IMAGE */}
                         <img
                         className="quest-preview-image"
-                        src="/img/quest/openq-s.png"
+                        src="https://odindesignthemes.com/vikinger/img/quest/openq-s.png"
                         alt="openq-s"
                         />
                         {/* /QUEST PREVIEW IMAGE */}
@@ -1285,7 +1285,7 @@ export default class profile extends React.Component{
                         {/* QUEST PREVIEW IMAGE */}
                         <img
                         className="quest-preview-image"
-                        src="/img/quest/openq-s.png"
+                        src="https://odindesignthemes.com/vikinger/img/quest/openq-s.png"
                         alt="openq-s"
                         />
                         {/* /QUEST PREVIEW IMAGE */}
@@ -1330,7 +1330,7 @@ export default class profile extends React.Component{
                         {/* QUEST PREVIEW IMAGE */}
                         <img
                         className="quest-preview-image"
-                        src="/img/quest/openq-s.png"
+                        src="https://odindesignthemes.com/vikinger/img/quest/openq-s.png"
                         alt="openq-s"
                         />
                         {/* /QUEST PREVIEW IMAGE */}
@@ -1375,7 +1375,7 @@ export default class profile extends React.Component{
                         {/* QUEST PREVIEW IMAGE */}
                         <img
                         className="quest-preview-image"
-                        src="/img/quest/openq-s.png"
+                        src="https://odindesignthemes.com/vikinger/img/quest/openq-s.png"
                         alt="openq-s"
                         />
                         {/* /QUEST PREVIEW IMAGE */}
@@ -1420,7 +1420,7 @@ export default class profile extends React.Component{
                         {/* QUEST PREVIEW IMAGE */}
                         <img
                         className="quest-preview-image"
-                        src="/img/quest/openq-s.png"
+                        src="https://odindesignthemes.com/vikinger/img/quest/openq-s.png"
                         alt="openq-s"
                         />
                         {/* /QUEST PREVIEW IMAGE */}
@@ -1815,7 +1815,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/like.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/like.png"
                                 alt="reaction-like"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1832,7 +1832,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/love.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/love.png"
                                 alt="reaction-love"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1853,7 +1853,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/dislike.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/dislike.png"
                                 alt="reaction-dislike"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1870,7 +1870,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/happy.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/happy.png"
                                 alt="reaction-happy"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1897,7 +1897,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/funny.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/funny.png"
                                 alt="reaction-funny"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1914,7 +1914,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/wow.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/wow.png"
                                 alt="reaction-wow"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1935,7 +1935,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/angry.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/angry.png"
                                 alt="reaction-angry"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1952,7 +1952,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/sad.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/sad.png"
                                 alt="reaction-sad"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1979,7 +1979,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/like.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/like.png"
                                 alt="reaction-like"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -1996,7 +1996,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/love.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/love.png"
                                 alt="reaction-love"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2017,7 +2017,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/dislike.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/dislike.png"
                                 alt="reaction-dislike"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2034,7 +2034,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/happy.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/happy.png"
                                 alt="reaction-happy"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2064,7 +2064,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/funny.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/funny.png"
                                 alt="reaction-funny"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2081,7 +2081,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/wow.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/wow.png"
                                 alt="reaction-wow"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2102,7 +2102,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/angry.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/angry.png"
                                 alt="reaction-angry"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2119,7 +2119,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/sad.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/sad.png"
                                 alt="reaction-sad"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2147,7 +2147,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/like.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/like.png"
                                 alt="reaction-like"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2164,7 +2164,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/love.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/love.png"
                                 alt="reaction-love"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2185,7 +2185,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/dislike.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/dislike.png"
                                 alt="reaction-dislike"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2202,7 +2202,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/happy.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/happy.png"
                                 alt="reaction-happy"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2229,7 +2229,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/funny.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/funny.png"
                                 alt="reaction-funny"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2246,7 +2246,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/wow.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/wow.png"
                                 alt="reaction-wow"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2267,7 +2267,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/angry.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/angry.png"
                                 alt="reaction-angry"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2284,7 +2284,7 @@ export default class profile extends React.Component{
                                 {/* REACTION STAT IMAGE */}
                                 <img
                                 className="reaction-stat-image"
-                                src="/img/reaction/sad.png"
+                                src="https://odindesignthemes.com/vikinger/img/reaction/sad.png"
                                 alt="reaction-sad"
                                 />
                                 {/* /REACTION STAT IMAGE */}
@@ -2848,7 +2848,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/05.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/05.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -2962,7 +2962,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/03.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/03.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -3076,7 +3076,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/10.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/10.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -3190,7 +3190,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/03.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/03.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -3304,7 +3304,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-30-32"
-                            data-src="/img/avatar/02.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/02.jpg"
                             style={{ width: 30, height: 32, position: "relative" }}
                             >
                             <canvas
@@ -3483,7 +3483,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-40-44"
-                            data-src="/img/avatar/29.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/29.jpg"
                             style={{ width: 40, height: 44, position: "relative" }}
                             >
                             <canvas
@@ -3535,7 +3535,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-40-44"
-                            data-src="/img/avatar/24.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/24.jpg"
                             style={{ width: 40, height: 44, position: "relative" }}
                             >
                             <canvas
@@ -3587,7 +3587,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-40-44"
-                            data-src="/img/avatar/25.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/25.jpg"
                             style={{ width: 40, height: 44, position: "relative" }}
                             >
                             <canvas
@@ -3639,7 +3639,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-40-44"
-                            data-src="/img/avatar/28.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/28.jpg"
                             style={{ width: 40, height: 44, position: "relative" }}
                             >
                             <canvas
@@ -3691,7 +3691,7 @@ export default class profile extends React.Component{
                             {/* HEXAGON */}
                             <div
                             className="hexagon-image-40-44"
-                            data-src="/img/avatar/27.jpg"
+                            data-src="https://odindesignthemes.com/vikinger/img/avatar/27.jpg"
                             style={{ width: 40, height: 44, position: "relative" }}
                             >
                             <canvas

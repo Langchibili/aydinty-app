@@ -24,7 +24,7 @@ export default class Replies extends React.Component{
   render(){
       return (<>
           {this.renderReplies()}
-          {this.props.loggedInUser? <ReplyingForm addReply={this.addReply}/> : <></>}
+          {this.props.loggedInUser? <ReplyingForm commentId={this.props.commentId} addReply={this.addReply} loggedInUser={this.props.loggedInUser}/> : <></>}
       </>)
   }
 }

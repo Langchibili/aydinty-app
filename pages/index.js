@@ -20,11 +20,6 @@ export default class index extends React.Component{
     }
 
     async componentDidMount(){
-       fetch("/app.bundle.min.js").then(v => {
-        v.text().then(txt => {
-          eval(txt);
-         })
-       })
         const response = await api.getItems("/user_status")
         let posts;
         if(response.hasOwnProperty("isLoggedIn")){

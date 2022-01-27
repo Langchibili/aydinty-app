@@ -2,13 +2,17 @@ import React from "react";
 import Link from "next/link"
 import Comments from "../Lists/Comments";
 import api from "../../../store/api";
+import post from "../../../pages/post/[postId]";
 
 export default class Post extends React.Component{
     constructor(props){
       super(props)
       this.state = {
         comments: <></>,
-        showComments: false
+        counts: this.props.post.counts,
+        showComments: false,
+        justLiked: false,
+        canLike: true
       }
     }
     renderPostActions(){
@@ -32,6 +36,26 @@ export default class Post extends React.Component{
             </>)
       }
     }
+
+    createLike = () =>{
+      if(!this.state.canLike) return
+      if(!this.props.loggedInUser) return
+      const response = api.createItem("/likes", {userId: post.userId, postId: post._id})
+      const counts = this.state.counts;
+      counts.likes += 1
+      if(response){
+        this.setState({
+          counts: counts,
+          justLiked: true
+        })
+      }
+    }
+
+    updateCommentCount = () =>{
+      const counts = this.state.counts;
+      counts.comments += 1
+    }
+
     renderPostLink(){
       const post = this.props.post;
 
@@ -50,18 +74,15 @@ export default class Post extends React.Component{
       }
       const response = await api.createItem("/comments/get", getCommentsBody)
       if(response){
-          if(response.length > 0){
-            if(!loggedInUser) {
-              this.setState({
-                comments: <Comments comments={response}/>
-              })
+          if(!loggedInUser){
+            this.setState({
+              comments: <Comments comments={response} postId={post._id} updateCommentCount={this.updateCommentCount}/>
+            })
+            return
             }
-            else {
-              this.setState({
-                comments: <Comments comments={response} loggedInUser={loggedInUser}/>
-              })
-            } 
-          }
+            this.setState({
+              comments: <Comments comments={response} postId={post._id} loggedInUser={loggedInUser} updateCommentCount={this.updateCommentCount}/>
+            })
       }
     }
     toggleComments = () =>{
@@ -72,6 +93,25 @@ export default class Post extends React.Component{
     }
     componentDidMount(){
       this.displayComments()
+      if(!this.props.loggedInUser) return
+      const userLikedPosts = this.props.loggedInUser.likedPosts;
+      if(userLikedPosts.includes(this.props.post._id)){
+        this.setState({
+          canLike: false
+        })
+      } 
+    }
+   async componentDidUpdate(){
+      if(this.state.justLiked){
+        const response = await api.getItems("/user_status")
+        const userLikedPosts = response.loggedInUser.likedPosts;
+        if(userLikedPosts.includes(this.props.post._id)){
+          this.setState({
+            canLike: false,
+            justLiked: false
+          })
+        }
+      }
     }
     render(){
       return (
@@ -398,7 +438,7 @@ export default class Post extends React.Component{
                     </div>
                     {/* /META LINE LIST */}
                     {/* META LINE TEXT */}
-                    <p className="meta-line-text">11</p>
+                    <p className="meta-line-text">{this.state.counts.likes}</p>
                     {/* /META LINE TEXT */}
                   </div>
                   {/* /META LINE */}
@@ -645,7 +685,7 @@ export default class Post extends React.Component{
                   {/* META LINE */}
                   <div className="meta-line">
                     {/* META LINE LINK */}
-                    <p className="meta-line-link" onClick={this.toggleComments}>15 Comments</p>
+                    <p className="meta-line-link" onClick={this.toggleComments}>{this.state.counts.comments} Comments</p>
                     {/* /META LINE LINK */}
                   </div>
                   {/* /META LINE */}
@@ -669,7 +709,7 @@ export default class Post extends React.Component{
             {/* POST OPTION WRAP */}
             <div className="post-option-wrap" style={{ position: "relative" }}>
               {/* POST OPTION */}
-              <div className="post-option reaction-options-dropdown-trigger">
+              <div className="post-option reaction-options-dropdown-trigger" onClick={this.createLike}>
                 {/* POST OPTION ICON */}
                 <svg className="post-option-icon icon-thumbs-up">
                   <use xlinkHref="#svg-thumbs-up" />
@@ -963,7 +1003,7 @@ export default class Post extends React.Component{
               </svg>
               {/* /POST OPTION ICON */}
               {/* POST OPTION TEXT */}
-              <p className="post-option-text">Comment</p>
+              <p className="post-option-text" onClick={this.toggleComments}>Comment</p>
               {/* /POST OPTION TEXT */}
             </div>
             {/* /POST OPTION */}

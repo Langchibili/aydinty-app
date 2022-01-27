@@ -24,7 +24,7 @@ export default class Comments extends React.Component{
   render(){
       return (<>
           {this.renderComments()}
-          {this.props.loggedInUser? <CommentingForm addComment={this.addComment}/> : <></>}
+          {this.props.loggedInUser? <CommentingForm postId={this.props.postId} addComment={this.addComment} updateCommentCount={this.props.updateCommentCount} loggedInUser={this.props.loggedInUser}/> : <></>}
       </>)
   }
 }

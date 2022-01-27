@@ -28,11 +28,6 @@ export default class user extends React.Component{
       }
  
      async componentDidMount(){
-      fetch("/app.bundle.min.js").then(v => {
-        v.text().then(txt => {
-          eval(txt);
-         })
-       })
          const response = await api.getItems("/user_status")
          if(response.hasOwnProperty("isLoggedIn")){
            if(!response.isLoggedIn) window.location = "/signup"
@@ -74,6 +69,11 @@ export default class user extends React.Component{
   
      
      render(){
+      fetch("/app.bundle.min.js").then(v => {
+        v.text().then(txt => {
+          eval(txt);
+         })
+       })
         if(this.state.requestDone){
           if(!this.state.isLoggedIn){
             window.location = "/signup"
