@@ -45,12 +45,12 @@ export default class Comment extends React.Component{
       if(response){
           if(!loggedInUser){
             this.setState({
-              replies : <Replies replies={response} comment={comment}/>
+              replies : <Replies replies={response} comment={this.props.comment}/>
             })
             return
           }
           this.setState({
-            replies: <Replies replies={response} loggedInUser={loggedInUser} comment={comment}/>
+            replies: <Replies replies={response} loggedInUser={loggedInUser} comment={this.props.comment}/>
           })
       }
     }

@@ -18,13 +18,13 @@ export default class Replies extends React.Component{
   }
   renderReplies = () =>{
       return this.state.replies.map((reply)=>{
-          return <Reply key={reply._id} reply={reply} loggedInUser={this.props.loggedInUser}/>
+          return <Reply comment={this.props.comment} key={reply._id} reply={reply} loggedInUser={this.props.loggedInUser}/>
       }) 
   }
   render(){
       return (<>
           {this.renderReplies()}
-          {this.props.loggedInUser? <ReplyingForm commentId={this.props.commentId} addReply={this.addReply} loggedInUser={this.props.loggedInUser}/> : <></>}
+          {this.props.loggedInUser? <ReplyingForm comment={this.props.comment} commentId={this.props.commentId} addReply={this.addReply} loggedInUser={this.props.loggedInUser}/> : <></>}
       </>)
   }
 }
